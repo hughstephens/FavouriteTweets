@@ -1,6 +1,14 @@
 extends layout
 
 block content
-	div
-		a(id='sender')='Send a Message'
-		ul(id='receiver')
+    div
+        a(id='sender')='Send a Message'
+        ul(id='receiver')
+    div
+        form(action='/submit',method='post')
+            div(data-role='fieldcontain')
+                fieldset(data-role='controlgroup')
+                    label(for='user') username
+                        input(id='user',type='text',value='',placeholder='no @ symbol',name='user')
+            div(data-role='fieldcontain')
+                input(type='submit',value='Submit',data-transition='fade', data-theme='c')

@@ -2,8 +2,17 @@
 var connect = require('connect')
     , express = require('express')
     , io = require('socket.io')
-    , port = (process.env.PORT || 8081);
-
+    , port = (process.env.PORT || 8081)
+    , ipaddr = (process.env.IP || "0.0.0.0");;
+var twitterAPI = require('node-twitter-api');
+var twitter = new twitterAPI({
+    consumerKey: 'IUzTvHzTo32POgUeqOpNg',
+    consumerSecret: 'rCR5qZuG2cXyZenmwopHrMfLhDcmX6kPz9qrRY1cA',
+    callback: 'http://google.com'
+});
+var jsoncsv=require('jsoncsv');
+var accessToken="24363434-7QmtgjZmU0xuu3OXVUC4QBUC4rkihLkyhWF7FD7V9";
+var accessSecret="yigTevGhKJFF5Wf5fCzmk1Kjj9tx5xS25idGBJUFwRE";
 //Setup Express
 var server = express.createServer();
 server.configure(function(){
@@ -23,19 +32,17 @@ server.error(function(err, req, res, next){
                   title : '404 - Not Found'
                  ,description: ''
                  ,author: ''
-                 ,analyticssiteid: 'XXXXXXX' 
                 },status: 404 });
     } else {
         res.render('500.jade', { locals: { 
                   title : 'The Server Encountered an Error'
                  ,description: ''
                  ,author: ''
-                 ,analyticssiteid: 'XXXXXXX'
                  ,error: err 
                 },status: 500 });
     }
 });
-server.listen( port);
+server.listen(port,ipaddr);
 
 //Setup Socket.IO
 var io = io.listen(server);
@@ -65,6 +72,19 @@ server.get('/', function(req,res){
              ,author: 'Hugh Stephens'
             }
   });
+});
+
+server.post('/submit',function(req,res) {
+   console.log(req.body);
+    var params = {screen_name: req.body.user, count:200};
+    twitter.favorites("list",params,accessToken,accessSecret,function(error,data){
+        if(error) {
+            console.log('fail!');
+            res.send(error);
+        } else {
+            res.send(data);
+        }
+    })
 });
 
 
