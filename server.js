@@ -75,22 +75,23 @@ server.get('/', function(req,res){
 
 server.post('/submit',function(req,res) {
    console.log(req.body);
-    var params = {screen_name: req.body.user, count:200};
+    var params = {screen_name: req.body.user, count:20};
     twitter.favorites("list",params,accessToken,accessSecret,function(error,data){
         if(error) {
             console.log('fail!');
             res.send(error);
         } else {
-        	res.setHeader('Content-disposition', 'attachment; filename=tweets.xls');
+//            console.log(data);
+        	res.setHeader('Content-disposition', 'attachment; filename=tweets.csv');
             res.writeHead(200, {
-                'Content-Type': 'application/vnd.ms-excel'
+                'Content-Type': 'text/csv'
             });
-            var s = 'Created_At\tText\tUsername\tName\tLocation\tDescription\tURL\tFollowers\tFollowing\tTweets\tFavourite Tweets\tRetweets\n';
+            var s = 'Created_At,Text,Username,Name,Location,Description,profileURL,Followers,Following,Tweets,Favourites,Retweets\n';
         	data.forEach(function(row){
         		console.log(row);
-        		s+= row.created_at+'\t'+row.text+'\t'+row.user.screen_name+'\t'+row.user.name+'\t'+row.user.location+'\t'+
-        				row.user.description+'\t'+row.user.url+'\t'+row.user.followers_count+'\t'+row.user.friends_count+'\t'+
-        				row.user.statuses_count+'\t'+row.favorite_count+'\t'+row.retweet_count+'\n';            	
+        		s+= row.created_at+',"'+row.text+'","'+row.user.screen_name+'","'+row.user.name+'","'+row.user.location+'","'+
+        				row.user.description+'","'+row.user.url+'","'+row.user.followers_count+'","'+row.user.friends_count+'","'+
+        				row.user.statuses_count+'","'+row.favorite_count+'","'+row.retweet_count+'"\n';
         	});
         	res.end(s);	
         }

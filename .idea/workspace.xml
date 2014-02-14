@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db3a0d40-e0cb-4713-b51e-e49662d880f3" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.jade" afterPath="$PROJECT_DIR$/views/index.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -38,7 +39,7 @@
       <file leaf-file-name="server.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="79" selection-start="3472" selection-end="3472" vertical-scroll-proportion="0.69678956" vertical-offset="869" max-vertical-offset="1905">
+            <state line="91" column="36" selection-start="3051" selection-end="3051" vertical-scroll-proportion="0.6777646" vertical-offset="795" max-vertical-offset="1875">
               <folding />
             </state>
           </provider>
@@ -56,7 +57,7 @@
       <file leaf-file-name="index.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/index.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="28" selection-start="140" selection-end="140" vertical-scroll-proportion="-4.2" vertical-offset="0" max-vertical-offset="285">
+            <state line="13" column="90" selection-start="571" selection-end="571" vertical-scroll-proportion="-7.8" vertical-offset="0" max-vertical-offset="285">
               <folding />
             </state>
           </provider>
@@ -65,7 +66,7 @@
       <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="11" selection-start="326" selection-end="326" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="405">
+            <state line="14" column="13" selection-start="356" selection-end="362" vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="435">
               <folding />
             </state>
           </provider>
@@ -80,15 +81,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/templates/views/layout.jade" />
         <option value="$PROJECT_DIR$/templates/app/server.js" />
-        <option value="$PROJECT_DIR$/views/index.jade" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/Procfile" />
+        <option value="$PROJECT_DIR$/views/index.jade" />
         <option value="$PROJECT_DIR$/server.js" />
       </list>
     </option>
@@ -279,7 +285,15 @@
       <created>1392355641114</created>
       <updated>1392355641114</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commenting in todo's">
+      <created>1392357868253</created>
+      <updated>1392357868253</updated>
+    </task>
+    <task id="LOCAL-00003" summary="list all variables to be collected">
+      <created>1392360994951</created>
+      <updated>1392360994951</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -287,7 +301,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294753" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294753" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -320,7 +334,9 @@
     </option>
     <MESSAGE value="addprocfile" />
     <MESSAGE value="select 200" />
-    <option name="LAST_COMMIT_MESSAGE" value="select 200" />
+    <MESSAGE value="commenting in todo's" />
+    <MESSAGE value="list all variables to be collected" />
+    <option name="LAST_COMMIT_MESSAGE" value="list all variables to be collected" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -333,20 +349,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="28" selection-start="140" selection-end="140" vertical-scroll-proportion="-4.2" vertical-offset="0" max-vertical-offset="285">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="11" selection-start="326" selection-end="326" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="405">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="9" selection-start="9" selection-end="9" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1268">
@@ -354,9 +356,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="90" selection-start="571" selection-end="571" vertical-scroll-proportion="-7.8" vertical-offset="0" max-vertical-offset="285">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="13" selection-start="356" selection-end="362" vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="435">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="79" selection-start="3472" selection-end="3472" vertical-scroll-proportion="0.69678956" vertical-offset="869" max-vertical-offset="1905">
+        <state line="91" column="36" selection-start="3051" selection-end="3051" vertical-scroll-proportion="0.6777646" vertical-offset="795" max-vertical-offset="1875">
           <folding />
         </state>
       </provider>
