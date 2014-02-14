@@ -93,8 +93,11 @@ server.post('/submit',function(req,res) {
 //                userdesc = data2.user.description,
 //                userURL = data2.user.url,
 //                followers = data2.user.followers_count,
+//                following = data2.user.friends_count,
+//                tweets = data2.user.statuses_count,
+//                favCount = data2.favorite_count,
 //                rtCount = data2.retweet_count;
-//            var content = {created_at: created_at, text: text, username:username,realname:realname,location:location,userdesc:userdesc,userURL:userURL,followers:followers,rtCount:rtCount};
+//            var content = {created_at: created_at, text: text, username:username,realname:realname,location:location,userdesc:userdesc,userURL:userURL,followers:followers,following:following,tweets:tweets,favCount:favCount,rtCount:rtCount};
 // TODO SOMETHING THAT SAVES 'CONTENT' AS A CSV AND SENDS TO RESPONSE AS A FILE
         }
     })
