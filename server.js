@@ -83,6 +83,19 @@ server.post('/submit',function(req,res) {
             res.send(error);
         } else {
             res.send(data);
+            var data2=JSON.parse(data);
+// TODO SAVE ONLY THESE FIELDS AS A FLAT FILE
+//            var created_at = data2.created_at,
+//                text = data2.text,
+//                username = data2.user.screen_name,
+//                realname = data2.user.name,
+//                location = data2.user.location,
+//                userdesc = data2.user.description,
+//                userURL = data2.user.url,
+//                followers = data2.user.followers_count,
+//                rtCount = data2.retweet_count;
+//            var content = {created_at: created_at, text: text, username:username,realname:realname,location:location,userdesc:userdesc,userURL:userURL,followers:followers,rtCount:rtCount};
+// TODO SOMETHING THAT SAVES 'CONTENT' AS A CSV AND SENDS TO RESPONSE AS A FILE
         }
     })
 });
