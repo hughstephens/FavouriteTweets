@@ -75,7 +75,7 @@ server.get('/', function(req,res){
 
 server.post('/submit',function(req,res) {
    console.log(req.body);
-    var params = {screen_name: req.body.user, count:20};
+    var params = {screen_name: req.body.user, count:200};
     twitter.favorites("list",params,accessToken,accessSecret,function(error,data){
         if(error) {
             console.log('fail!');
