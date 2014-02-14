@@ -3,14 +3,13 @@ var connect = require('connect')
     , express = require('express')
     , io = require('socket.io')
     , port = (process.env.PORT || 8081)
-    , ipaddr = (process.env.IP || "0.0.0.0");;
+    , ipaddr = (process.env.IP || "0.0.0.0");
 var twitterAPI = require('node-twitter-api');
 var twitter = new twitterAPI({
     consumerKey: 'IUzTvHzTo32POgUeqOpNg',
     consumerSecret: 'rCR5qZuG2cXyZenmwopHrMfLhDcmX6kPz9qrRY1cA',
     callback: 'http://google.com'
 });
-var jsoncsv=require('jsoncsv');
 var accessToken="24363434-7QmtgjZmU0xuu3OXVUC4QBUC4rkihLkyhWF7FD7V9";
 var accessSecret="yigTevGhKJFF5Wf5fCzmk1Kjj9tx5xS25idGBJUFwRE";
 //Setup Express
@@ -82,23 +81,18 @@ server.post('/submit',function(req,res) {
             console.log('fail!');
             res.send(error);
         } else {
-            res.send(data);
-            var data2=JSON.parse(data);
-// TODO SAVE ONLY THESE FIELDS AS A FLAT FILE
-//            var created_at = data2.created_at,
-//                text = data2.text,
-//                username = data2.user.screen_name,
-//                realname = data2.user.name,
-//                location = data2.user.location,
-//                userdesc = data2.user.description,
-//                userURL = data2.user.url,
-//                followers = data2.user.followers_count,
-//                following = data2.user.friends_count,
-//                tweets = data2.user.statuses_count,
-//                favCount = data2.favorite_count,
-//                rtCount = data2.retweet_count;
-//            var content = {created_at: created_at, text: text, username:username,realname:realname,location:location,userdesc:userdesc,userURL:userURL,followers:followers,following:following,tweets:tweets,favCount:favCount,rtCount:rtCount};
-// TODO SOMETHING THAT SAVES 'CONTENT' AS A CSV AND SENDS TO RESPONSE AS A FILE
+        	res.setHeader('Content-disposition', 'attachment; filename=tweets.xls');
+            res.writeHead(200, {
+                'Content-Type': 'application/vnd.ms-excel'
+            });
+            var s = 'Created_At\tText\tUsername\tName\tLocation\tDescription\tURL\tFollowers\tFollowing\tTweets\tFavourite Tweets\tRetweets\n';
+        	data.forEach(function(row){
+        		console.log(row);
+        		s+= row.created_at+'\t'+row.text+'\t'+row.user.screen_name+'\t'+row.user.name+'\t'+row.user.location+'\t'+
+        				row.user.description+'\t'+row.user.url+'\t'+row.user.followers_count+'\t'+row.user.friends_count+'\t'+
+        				row.user.statuses_count+'\t'+row.favorite_count+'\t'+row.retweet_count+'\n';            	
+        	});
+        	res.end(s);	
         }
     })
 });
