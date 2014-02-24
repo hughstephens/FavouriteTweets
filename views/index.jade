@@ -2,8 +2,8 @@ extends layout
 
 block content
     div
-        a(id='sender')='Download an Excel file of Twitter favourites for a user:'
-        ul(id='receiver')
+        h1='Dialogue\'s handy Twitter tools #1'
+        h2='Download an Excel file of Twitter favourites for a specified user'
     div
         form(action='/submit',method='post')
             div(data-role='fieldcontain')
@@ -12,3 +12,10 @@ block content
                         input(id='user',type='text',value='',placeholder='no @ symbol',name='user')
             div(data-role='fieldcontain')
                 input(type='submit',value='Submit',data-transition='fade', data-theme='c')
+    div
+        p
+            | This service is brought to you by
+            a(href="http://www.dialogueconsulting.com.au") social media consultants
+            | Dialogue Consulting based in Melbourne, Australia.
+        p
+            | Love it? Send us thanks in a Tweet @DialogueAus...
